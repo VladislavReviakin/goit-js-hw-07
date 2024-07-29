@@ -14,7 +14,7 @@ createButton.addEventListener("click", () => {
     if (amount >= 1 && amount <= 100) {
       createBoxes(amount);
     } else {
-      console.error(
+      alert(
         "Invalid input value. Please enter a number between 1 and 100."
       );
     }
@@ -23,6 +23,7 @@ createButton.addEventListener("click", () => {
 destroyButton.addEventListener("click", destroyBoxes);
 
 function createBoxes(amount) {
+  destroyBoxes()
   const fragment = document.createDocumentFragment();
   for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
@@ -46,13 +47,13 @@ boxesContainer.style.flexWrap = 'wrap';
 
 //style
 const controls = document.querySelector('#controls')
-controls.style.width = '486px';
+//controls.style.width = '486px';
 controls.style.height = '104px';
 controls.style.padding = '32px';
 controls.style.gap = '16px';
 controls.style.borderRadius = '8px';
 
-input.style.width = '150px';
+//input.style.width = '150px';
 input.style.height = '40px';
 input.style.padding = '8px 72px';
 input.style.gap = '10px';
